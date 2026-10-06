@@ -43,15 +43,15 @@ The skill reads the guide for the requested **scenario and language**. Chinese r
 
 <a id="examples"></a>
 
-## One source, three contexts
+## One set of notes, three contexts
 
-> **Source:** Accuracy increased from 82% to 86% on the same test set. Other datasets have not been evaluated.
+> **Source notes:** Dataset A test set (the same for both): our method 86% accuracy; baseline 82%; other datasets not evaluated.
 
 | You are writing… | A rewrite for that context |
 |---|---|
-| **A talk** | On the same test set, accuracy rose from 82% to 86%. Other datasets haven't been tested yet. |
-| **A slide** | **Accuracy on the same test set: 82% → 86%**<br>Other datasets: not yet evaluated |
-| **A paper** | Accuracy increased from 82% to 86% on the same test set. Performance on other datasets has not yet been evaluated. |
+| **A talk** | On the same test set from Dataset A, our method reached 86% accuracy and the baseline reached 82%. We haven't evaluated other datasets yet. |
+| **A slide** | **Dataset A test set: accuracy**<br>Our method 86% · baseline 82%<br>Other datasets: not evaluated |
+| **A paper** | Using the same test set from Dataset A, our method achieved 86% accuracy, compared with 82% for the baseline. We did not evaluate other datasets. |
 
 The wording and structure change. The numbers, evaluation conditions, and limitations stay intact.
 
@@ -132,27 +132,31 @@ All examples are fictional illustrations, not research findings or performance m
 
 The default is **preserve the original voice**. Say “make it warmer” or “formal but direct,” or choose **natural · warm · direct · measured · formal · lively**.
 
-To see the options in use:
+To see relevant options in use:
 
 ```text
 Use context-aware-humanizer to show me the available tones.
-Use the same short English passage for each example.
+Use a passage with enough context to show meaningful differences; leave an already suitable version unchanged.
 ```
 
-**Compare all six tones on the same message**
+**A short message that already works**
 
-**Source:** Please send the revised brief by Friday so we can finish our review before launch.
+> Please send the revised brief by Friday so we can finish our review before launch.
 
-| Tone | Example |
-|---|---|
-| **natural** | Please send the revised brief by Friday so we can finish reviewing it before launch. |
-| **warm** | Please send the revised brief by Friday so we can finish our review before launch. Thank you! |
-| **direct** | Send the revised brief by Friday so we can finish our review before launch. |
-| **measured** | Please send the revised brief by Friday to allow us to complete the review before launch. |
-| **formal** | Please provide the revised brief by Friday to enable us to complete our review before launch. |
-| **lively** | Please send the revised brief by Friday so we can finish our review before launch! |
+For **natural**, keep it as written. A forced synonym, added “Thank you!”, or exclamation mark would not improve this request. The other tones are available when the audience and purpose call for them; they do not require six different rewrites of every sentence.
 
-Each version keeps the revised brief, Friday deadline, our review, and completion before launch. A short message may leave little room for variation. The skill does not invent experiences, promises, or emotions to exaggerate the difference.
+**A comparison with room for a real choice**
+
+> **Source:** The new search flow demo is Thursday at 3 p.m. We'll show the new filtering options. Please send questions by Wednesday; the link is in the calendar invite.
+
+| Tone | Rewrite | What changes |
+|---|---|---|
+| **natural** | The new search flow demo is Thursday at 3 p.m. We'll show the new filtering options. Please send questions by Wednesday; the link is in the calendar invite. | The original already fits. |
+| **direct** | New search flow demo: Thursday, 3 p.m. We'll show the new filtering options. Send questions by Wednesday. Link in the calendar invite. | Puts the logistics first and uses a compact team-update format. |
+| **formal** | The new search flow demo will take place on Thursday at 3 p.m. and cover the new filtering options. Please send any questions by Wednesday. The meeting link is in the calendar invitation. | Uses a professional register without padded phrases. |
+| **lively** | On Thursday at 3 p.m., we'll show the new search flow and its filtering options. Questions? Send them by Wednesday. The link's in the calendar invite. | Uses shorter beats without adding facts or relying on an exclamation mark. |
+
+These versions keep the demo time, topic, question deadline, and link location. **Warm** and **measured** remain options for contexts where those shifts serve the reader.
 
 A tone choice applies to the current request; it does not automatically become a lasting preference. Ordinary rewriting does not require a questionnaire.
 

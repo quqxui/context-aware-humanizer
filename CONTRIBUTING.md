@@ -28,6 +28,10 @@ Include the original text, exact request, actual output, host/model when known, 
 
 Review meaning preservation first, then contextual fit and reading benefit. Tests need not match one exact sentence. Missing a condition, inventing a completed experiment, or borrowing a fact from a style sample is a failure even if the result sounds fluent.
 
+For worked examples, use plausible source text and make the requested edit worth showing. If a source is already suitable, keep it unchanged and explain that choice instead of producing a cosmetic rewrite. For tone comparisons, choose only tones that fit the situation; a synonym, thank-you, or exclamation mark alone is not a useful distinction.
+
 先检查原意，再看场景是否合适、是否更好读。无需匹配唯一措辞；漏掉条件、编造已完成实验、把个人样本里的事实带入新文，都是需要修正的问题。
+
+案例应使用可信的原文，并体现值得展示的改写判断。原文已合适时，直接保留并说明原因，不为制造对照而只换近义词。语气对比只选适合该场景的选项；单独增加“谢谢”或感叹号不足以构成有效差异。
 
 Avoid universal word bans, invented author experiences, and detector scores as a quality proxy. Do not add measured performance claims without the inputs, raw outputs, denominator, comparison conditions, and review method.

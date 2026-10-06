@@ -16,15 +16,15 @@ These fictional examples illustrate editing decisions; they are not model evalua
 
 **Why:** The schedule appears immediately. The maintenance reason and scheduled reopening remain; no borrowing instructions or other actions are added.
 
-### Example 2: explaining a survey's limits
+### Example 2: leave a clear survey explanation alone
 
-**Request:** Make the survey explanation flow naturally while keeping the numbers and their scope.
+**Request:** Check whether this survey explanation needs polishing. Keep the numbers and their scope.
 
 **Before:** The neighborhood survey received 86 responses, and 52 respondents said evening classes were difficult to attend. The form was shared only in the community reading group, so these responses cannot represent the views of the whole neighborhood.
 
-**After:** The neighborhood survey received 86 responses; 52 respondents said evening classes were difficult to attend. Because the form was shared only in the community reading group, these responses cannot represent the whole neighborhood's views.
+**After:** The neighborhood survey received 86 responses, and 52 respondents said evening classes were difficult to attend. The form was shared only in the community reading group, so these responses cannot represent the views of the whole neighborhood.
 
-**Why:** The numbers lead into the sampling limitation. Response count, respondent count, distribution channel, and representativeness remain distinct; no recommendation is added.
+**Why:** The original already connects the response counts to the sampling limit clearly. Changing punctuation or a connector would not improve it.
 
 ## Organizing the article
 

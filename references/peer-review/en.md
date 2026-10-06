@@ -8,17 +8,17 @@ These fictional examples illustrate editing decisions; they are not model evalua
 
 ### Case 1 — Actionable major concern
 
-**Request:** Make the concern and requested action more direct while keeping the reviewer's evidence.
+**Request:** Turn the reviewer's notes into an actionable major concern without increasing its severity.
 
 **Source:**
 
-My concern is that the reported results are based on only one random seed. I ask the authors to repeat the experiments with multiple seeds and provide the mean and standard deviation.
+Only one random seed reported. Cannot judge whether the reported gain is stable. Ask authors to repeat the experiments with multiple seeds and report the mean and standard deviation.
 
 **Rewrite:**
 
-I am concerned that the reported results use only one random seed. I ask the authors to repeat the experiments with multiple seeds and report the mean and standard deviation.
+The paper reports results from only one random seed, so the stability of the reported gain is unclear. Please repeat the experiments with multiple seeds and report the mean and standard deviation.
 
-**Why:** The one-seed evidence and requested experiment remain; the wording becomes easier to act on without changing severity.
+**Why:** The evidence, its effect on interpreting the gain, and the requested experiment become one usable comment. The rewrite does not claim the gain is unstable or prescribe an extra test.
 
 ### Case 2 — Justified positive assessment
 

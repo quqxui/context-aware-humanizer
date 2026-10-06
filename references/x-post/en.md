@@ -18,17 +18,17 @@ These fictional examples illustrate editing decisions; they are not model evalua
 
 ### Example 2: a two-post thread with evidence limits
 
-**Request:** Make this a two-post thread while retaining the benchmark source and lack of independent verification.
+**Request:** Make this a two-post thread while retaining the benchmark setup, source, and conditional plan to test it.
 
-**Before:** I read the release notes. The maintainers' benchmark reports a 30% faster export, but I haven't measured it independently, so I see that as a useful signal, not a guarantee for every project.
+**Before:** I read the maintainers' release notes for the export update. Their benchmark used a 10 GB test file and reports exports 30% faster after a change to the caching path. I haven't run that benchmark or tested the new version on our logs. The result is useful for deciding whether to try the update, but it doesn't show that every project will see a 30% gain. If I have time next week, I'll run a comparison on our logs; for now, I wouldn't call the speedup verified in our setting.
 
 **After:**
 
-> 1/2 I read the release notes. The maintainers' benchmark reports a 30% faster export.
+> 1/2 I read the maintainers' release notes: their 10 GB benchmark reports 30% faster exports after a caching change. I haven't run their benchmark.
 >
-> 2/2 I haven't measured it independently, so I treat it as a useful signal, not a guarantee for every project.
+> 2/2 I haven't tested the update on our logs either. The result is a reason to try it, not a verified speedup for our setting or a guarantee for every project. If I have time next week, I'll compare it on our logs.
 
-**Why:** The sequence presents evidence, interpretation, and limitation. Attribution and the reported 30% remain; the benchmark does not become an independently measured or universal result.
+**Why:** The first post states what the maintainers measured; the second separates our unverified setting and conditional next step. The 10 GB test file, reported 30%, and limits remain explicit.
 
 ## Organizing the format
 

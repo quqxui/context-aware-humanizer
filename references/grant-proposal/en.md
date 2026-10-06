@@ -22,17 +22,17 @@ This project aims to investigate whether retrieval errors increase factual error
 
 ### Case 2 — Objectives versus feasibility
 
-**Request:** Separate the planned objective from supplied feasibility evidence in a research-strategy paragraph.
+**Request:** Turn these research notes into a strategy paragraph, separating the planned objective from the pilot result and its limit.
 
 **Source:**
 
-We will test whether the imaging workflow detects early tissue changes in the proposed cohort. In pilot work, the workflow detected the target signal in two batches, with 78% recovery. The pilot does not establish performance in the proposed cohort.
+Planned objective: test whether the imaging workflow detects early tissue changes in the proposed cohort. Pilot: target signal detected in two batches, with 78% recovery. The workflow has not been evaluated in the proposed cohort.
 
 **Rewrite:**
 
-We will test whether the imaging workflow detects early tissue changes in the proposed cohort. Pilot work detected the target signal in two batches, with 78% recovery, but did not establish performance in the proposed cohort.
+We will test whether the imaging workflow detects early tissue changes in the proposed cohort. In two pilot batches, the workflow detected the target signal with 78% recovery. Its performance in the proposed cohort remains untested.
 
-**Why:** The planned test, two pilot batches, 78% recovery, and the stated limitation remain; only the relationship between objective and feasibility is made explicit.
+**Why:** The notes become a usable paragraph without presenting the pilot as a result from the proposed cohort. The objective, two batches, 78% recovery, and untested cohort remain explicit.
 
 ## Common formats
 

@@ -8,13 +8,13 @@ These fictional examples illustrate editing decisions; they are not model evalua
 
 ### Example 1: staging status and handoff
 
-**Request:** Make this a compact update while keeping the owner, deadline, and environment boundary.
+**Request:** Turn this status note into a handoff while keeping the owner, deadline, and deployment boundary.
 
-**Before:** The fix for the payment API timeout has been deployed to staging. Qiao, please complete regression checks by 16:00 tomorrow. Production remains unchanged.
+**Before:** The payment API timeout fix is now in staging, while production is still on the previous version. Qiao is handling regression checks, and those checks need to be completed by 16:00 tomorrow.
 
-**After:** Payment API timeout fix: deployed to staging. Qiao, please complete regression by 16:00 tomorrow. Production remains unchanged.
+**After:** The payment API timeout fix is in staging; production is still on the previous version. Qiao, please complete regression checks by 16:00 tomorrow.
 
-**Why:** The update is easier to scan. Staging deployment, Qiao's action, the deadline, and unchanged production remain explicit.
+**Why:** The note becomes a request Qiao can act on. Staging and production remain distinct, and the deadline is unchanged; no production deployment is promised.
 
 ### Example 2: an unresolved dependency
 
