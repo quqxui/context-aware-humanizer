@@ -43,17 +43,17 @@ The skill reads the guide for the requested **scenario and language**. Chinese r
 
 <a id="examples"></a>
 
-## One set of notes, three contexts
+## One result paragraph, three contexts
 
-> **Source notes:** Dataset A test set (the same for both): our method 86% accuracy; baseline 82%; other datasets not evaluated.
+> **Source paragraph:** On Dataset A, our method achieved 86% accuracy, compared with 82% for the baseline under the same evaluation setup. This represents an improvement of 4 percentage points.
 
 | You are writing… | A rewrite for that context |
 |---|---|
-| **A talk** | On the same test set from Dataset A, our method reached 86% accuracy and the baseline reached 82%. We haven't evaluated other datasets yet. |
-| **A slide** | **Dataset A test set: accuracy**<br>Our method 86% · baseline 82%<br>Other datasets: not evaluated |
-| **A paper** | Using the same test set from Dataset A, our method achieved 86% accuracy, compared with 82% for the baseline. We did not evaluate other datasets. |
+| **A talk** | On Dataset A, our method reached 86% accuracy, while the baseline reached 82% under the same setup. That's a gain of 4 percentage points. |
+| **A slide** | **Dataset A: +4 percentage points in accuracy**<br>Our method 86% · baseline 82%<br>Same evaluation setup |
+| **A paper** | Under the same evaluation setup on Dataset A, our method achieved 86% accuracy, exceeding the baseline's 82% by 4 percentage points. |
 
-The wording and structure change. The numbers, evaluation conditions, and limitations stay intact.
+The wording and structure change. The numbers and comparison conditions stay intact.
 
 <details>
 <summary><strong>Another example: a plan must remain a plan</strong></summary>
