@@ -4,3 +4,6 @@ __pycache__/
 .local/
 .env
 .env.*
+
+# Generated personal writing memory, including revisions and locks.
+/memory/

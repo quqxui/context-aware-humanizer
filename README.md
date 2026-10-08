@@ -21,7 +21,7 @@
   <a href="#quick-start">Quick start</a> ·
   <a href="#examples">Examples</a> ·
   <a href="#scenarios">Scenarios</a> ·
-  <a href="#voice-options">Tone choices</a> ·
+  <a href="#voice-options">Expression preferences</a> ·
   <a href="#installation">Installation</a>
 </p>
 
@@ -37,7 +37,7 @@ A bilingual Agent Skill for **AI text humanization, text polishing, rewriting, p
 |---|---|
 | **The right context** | **12 dedicated scenarios**, including six academic uses: grants, talks, slides, papers, peer reviews, and reviewer responses. |
 | **Independent Chinese and English** | Each scenario has **separate rules and examples for each language**. Maintain either version independently. |
-| **Your own voice** | **Preserve your voice by default.** Choose a tone, supply writing samples, or reuse an editable personal profile. |
+| **Your own voice** | **Preserve your voice by default.** Describe the changes you want, supply writing samples, or reuse an editable personal profile. |
 
 The skill reads the guide for the requested **scenario and language**. Chinese rewrites use Chinese examples; English rewrites use English examples. Conference rebuttals and journal revision letters are handled with their different constraints.
 
@@ -128,37 +128,15 @@ All examples are fictional illustrations, not research findings or performance m
 
 <a id="voice-options"></a>
 
-## 🎙️ Choose a tone
+## 🎙️ Describe your expression preferences
 
-The default is **preserve the original voice**. Say “make it warmer” or “formal but direct,” or choose **natural · warm · direct · measured · formal · lively**.
+The default is to **preserve the original voice** while adapting the text to its context. Describe any changes you want in your own words:
 
-To see relevant options in use:
+- “This is a message to a colleague. Put the requested action before the background.”
+- “This is a reviewer response. Keep the wording polite and the disagreement clear.”
+- “This is a message to a friend. Make it conversational without adding pleasantries.”
 
-```text
-Use context-aware-humanizer to show me the available tones.
-Use a passage with enough context to show meaningful differences; leave an already suitable version unchanged.
-```
-
-**A short message that already works**
-
-> Please send the revised brief by Friday so we can finish our review before launch.
-
-For **natural**, keep it as written. A forced synonym, added “Thank you!”, or exclamation mark would not improve this request. The other tones are available when the audience and purpose call for them; they do not require six different rewrites of every sentence.
-
-**A comparison with room for a real choice**
-
-> **Source:** The new search flow demo is Thursday at 3 p.m. We'll show the new filtering options. Please send questions by Wednesday; the link is in the calendar invite.
-
-| Tone | Rewrite | What changes |
-|---|---|---|
-| **natural** | The new search flow demo is Thursday at 3 p.m. We'll show the new filtering options. Please send questions by Wednesday; the link is in the calendar invite. | The original already fits. |
-| **direct** | New search flow demo: Thursday, 3 p.m. We'll show the new filtering options. Send questions by Wednesday. Link in the calendar invite. | Puts the logistics first and uses a compact team-update format. |
-| **formal** | The new search flow demo will take place on Thursday at 3 p.m. and cover the new filtering options. Please send any questions by Wednesday. The meeting link is in the calendar invitation. | Uses a professional register without padded phrases. |
-| **lively** | On Thursday at 3 p.m., we'll show the new search flow and its filtering options. Questions? Send them by Wednesday. The link's in the calendar invite. | Uses shorter beats without adding facts or relying on an exclamation mark. |
-
-These versions keep the demo time, topic, question deadline, and link location. **Warm** and **measured** remain options for contexts where those shifts serve the reader.
-
-A tone choice applies to the current request; it does not automatically become a lasting preference. Ordinary rewriting does not require a questionnaire.
+These are examples of requests, not fixed categories. Already suitable text can stay unchanged. Preferences apply to the current request and do not automatically become a lasting profile. They persist only after an explicit import, remember, save, or update request.
 
 <a id="personal-voice"></a>
 
@@ -187,6 +165,18 @@ If the export succeeds today, I expect to be able to send a draft tomorrow.
 > Quick update: the report is delayed because the data export failed. If it succeeds today, I expect to be able to send a draft tomorrow.
 
 The short update format carries over. The chart and the two fixes do not. Delivery remains expected and conditional.
+
+### Import supplied documents into memory
+
+Use a natural-language request when you want a reusable memory entry. State the documents, target author, language, and scope. Ask for a preview if you want to inspect the merge before saving:
+
+```text
+These two files are my Chinese work-message samples. Treat only text written by me as evidence.
+Import the observable style for the work-message scenario and remember it for future Chinese work messages.
+Keep source facts out of the profile. Show the merged profile and save it after checking for conflicts.
+```
+
+The host uses its available document tools to read supplied files. The storage scripts save derived style data and minimal source labels; they do not parse `docx` or `pdf` themselves. A sample-derived pattern with limited evidence stays tentative. An explicit user preference can become a confirmed constraint.
 
 <details>
 <summary><strong>Optional: create a reusable profile</strong></summary>
@@ -253,7 +243,7 @@ Next time, supply the profile and ask the assistant to apply it to a work messag
 
 ## Installation
 
-This is a **Markdown skill** for a host model. The files provide instructions and examples; no build step is needed.
+This skill contains Markdown guidance and Python 3.9+ standard-library scripts for optional persistent memory and packaging. Ordinary text editing needs the Markdown files only. Persistent memory and package operations need a writable installation and Python 3.9 or newer.
 
 Download the repository or clone it:
 
@@ -262,19 +252,47 @@ git clone https://github.com/quqxui/context-aware-humanizer.git
 ```
 
 1. **Try it locally:** ask your assistant to read [`SKILL.md`](SKILL.md) and the guide for your scenario and language.
-2. **Install for reuse:** place `SKILL.md` and `references/` together in your host's skill directory, following that host's setup instructions.
-3. **Keep the relative layout intact:** `SKILL.md` routes requests to the appropriate guide.
+2. **Install for reuse:** copy `SKILL.md`, `references/`, `scripts/`, and `templates/` together into one writable skill directory. Keep the relative layout intact.
+3. **Use the optional memory features:** ensure Python 3.9+ is available. If it is unavailable, ordinary editing still works; persistent memory is reported as unavailable and is not claimed as applied or saved.
+
+### Persistent style memory
+
+An installed copy can keep style memory from user-authorized imports under its private `memory/` directory. The memory may contain tentative observations from supplied samples. The root is derived from the installed script path, so commands work from any current directory. Routine rewrites read only same-language `common` and exact-scenario profiles.
+
+```bash
+python3 <skill-root>/scripts/style_memory.py read --language zh --scenario work-message
+python3 <skill-root>/scripts/style_memory.py save \
+  --language zh --scenario work-message \
+  --input /tmp/profile.md --expected-revision HASH
+```
+
+Use `--expected-revision missing` for a new scope. `read` returns `profiles`, `target_revision`, and `warnings`. `save` returns `saved`, `path`, `revision`, `backup`, and `warnings`. Save only after the user explicitly asks to import, remember, save, or update. Preview and ordinary rewriting are read-only. See [`references/style-memory.md`](references/style-memory.md) for author checks, merge conflicts, and the profile template.
+
+Package an installation or make a private backup with:
+
+```bash
+python3 <skill-root>/scripts/skill_package.py export --output /outside/context-aware-humanizer.zip
+python3 <skill-root>/scripts/skill_package.py backup --output /outside/context-aware-humanizer-private.zip
+python3 <skill-root>/scripts/skill_package.py update --source /path/to/new-skill
+```
+
+`export` uses an allowlist for maintained runtime files, documentation, templates, and the README display banner. It excludes private memory and local artifacts. `backup` includes memory and revisions. `update` copies maintained program files and preserves the target installation's memory. Outputs are created exclusively; an existing output is not overwritten.
+
+The writable installation owns its memory. Public Git and public exports exclude it. Separate installations do not synchronize. A third-party installer or update tool can still remove user data, and this first release does not provide automatic cross-device sync. The scripts do not parse `docx` or `pdf`; the host reads supplied documents with its available document tools.
 
 <details>
 <summary><strong>Repository structure and what each part does</strong></summary>
 
 ```text
 context-aware-humanizer/
-├── SKILL.md                  # Shared rules, routing, tones, and personal voice
+├── SKILL.md                  # Shared rules, routing, and expression preferences
 ├── README.md                 # English documentation
 ├── README.zh.md              # Chinese documentation
 ├── .github/
 │   └── banner.png            # README display only
+├── scripts/                  # Python 3.9+ memory and packaging tools
+├── templates/                # Public profile templates
+├── memory/                   # Private generated memory; absent until first save
 └── references/
     ├── chat/                 # Every scenario has its own zh.md and en.md
     ├── work-message/
@@ -292,7 +310,7 @@ context-aware-humanizer/
 
 For example, Chinese papers use [`references/academic-paper/zh.md`](references/academic-paper/zh.md), while English papers use [`references/academic-paper/en.md`](references/academic-paper/en.md). **Maintain either file independently without synchronizing edits to the other.**
 
-`SKILL.md` holds the shared meaning constraints and instructions for choosing guides, tones, and personal profiles. The README presents user-facing choices, templates, and examples. The banner is for display and is not needed to run the skill.
+`SKILL.md` holds the shared meaning constraints, scenario routing, and guidance for expression preferences and personal profiles. The README presents usage examples and profile templates. `scripts/` provides optional persistence and packaging operations. `memory/` is private generated data and is not part of public exports. The banner is included by the public package for README display.
 
 </details>
 
