@@ -4,10 +4,7 @@
 
 <h1 align="center">Context-Aware Humanizer｜中英文去 AI 味与多场景写作 Skill</h1>
 
-<p align="center">
-  让文字符合使用场景，也保留你的表达习惯。<br>
-  微信聊天、社交平台、学术写作——中文与英文，各有自己的规则和示例。
-</p>
+<p align="center"><strong>让文字符合使用场景，也保留你的表达习惯。</strong></p>
 
 <p align="center">
   <a href="#scenarios"><img src="https://img.shields.io/badge/Languages-English%20%2B%20Chinese-24544F?style=flat-square" alt="Languages: English + Chinese"></a>
@@ -22,238 +19,276 @@
 
 <p align="center">
   <a href="#quick-start">快速使用</a> ·
-  <a href="#scenarios">场景目录</a> ·
-  <a href="#voice-options">表达偏好</a> ·
+  <a href="#examples">场景与示例</a> ·
   <a href="#personal-voice">个人表达</a> ·
   <a href="#installation">安装</a>
 </p>
 
----
-
-一个面向中文与英文的 Agent Skill，用于**去 AI 味、说人话、文本润色、改写、措辞校对、语气调整与个人风格保留**。适用于微信聊天、小红书笔记、X / Twitter 帖子、公众号文章、技术文档、基金申请、论文润色、学术讲稿、PPT 文本、审稿意见和审稿回复。
-
-> **只负责文本润色。** 本 skill 润色和改写你提供的文本。场景名称表示写作语气和格式，不代表可访问对应平台。它不提供微信、小红书、X、投稿系统等服务的 API 或访问接口，也不负责抓取、发布或提交内容。
+一个面向中文与英文的 Agent Skill，用于**去 AI 味、文本润色和语气调整**。从日常消息到学术论文，让表达更适合读者和用途。
 
 <a id="core-features"></a>
 
-## 核心 Features
-
-- **按场景改写** — 12 个场景分别维护规则和案例。其中 6 个学术场景覆盖基金申请、讲稿、PPT、论文、审稿意见与审稿回复。
-
-- **中英文独立** — 每个场景各有 `zh.md` 和 `en.md`，包含各自的规则和示例。改中文只看中文，改英文只看英文，无需同步修改另一份。
-
-- **保留个人表达** — 默认保留原文口气；也可以直接说明调整要求、提供自己的写作样本，或使用可编辑的个人档案。下方都有可直接参考的例子。
-
-默认保持原文语言。只有明确要求翻译或中英对照时，才输出另一种语言。
-
-<a id="examples"></a>
-
-## 同一段实验分析，写给不同场景
-
-**原文：** 在相同的评估设置下，本方法在数据集 A 上的准确率达到 86%，基线为 82%。本方法的准确率比基线提高了 4 个百分点。
-
-| 用途 | 改写示例 |
-|---|---|
-| **学术讲稿** | 先看数据集 A 的结果：在相同设置下，本方法的准确率是 86%，基线是 82%。本方法高了 4 个百分点。 |
-| **学术 PPT** | **数据集 A：准确率提高 4 个百分点**<br>本方法 86% · 基线 82%<br>相同评估设置 |
-| **学术论文** | 在相同评估设置下，本方法在数据集 A 上的准确率为 86%，较基线的 82% 提高了 4 个百分点。 |
-
-结构和措辞随用途调整，**事实、条件和结论力度保持不变**。例如，“如果负责人今天批准，我可能周五前给你一版草案”可以写得自然些，但不能变成“我周五给你”。
+- **12 个写作场景**：分别处理聊天、社交内容、工作沟通、文档和六类学术写作。
+- **中英文独立规则**：每个场景各有语言指南和完整案例，可分别维护。
+- **保留个人表达**：默认保留原文口气，也支持写作样本和可复用的表达档案。
 
 <a id="quick-start"></a>
 
 ## ⚡ 快速使用
 
-[加载 skill](#installation) 后，直接说清楚用途、语言、对象和偏好，**不需要记参数或填写问卷**。
-
-**给导师发微信**
+[加载 skill](#installation) 后，告诉助手用途和偏好，再贴上原文：
 
 ```text
 用 context-aware-humanizer，把下面这段改成给导师发的中文微信。
 礼貌、自然，保留“可能周五完成”，不要改成确定承诺：
-……
+[粘贴原文]
 ```
 
-**润色英文审稿回复**
-
-```text
-用 context-aware-humanizer 润色下面这封英文审稿回复。
-保留明确的不同意见，语气专业，不增加实验或修改记录：
-……
-```
-
-**压缩成一页学术 PPT**
-
-```text
-把下面结果改成一页中文学术 PPT：一个标题、两条要点。
-保留测试条件、指标和局限：
-……
-```
-
-这些是发给助手的自然语言请求，不是终端命令。默认返回一份可直接使用的正文；需要修改对照、多个版本或只标问题时，直接说。**原文已经合适，可以不改。**
+默认保留原文语言，返回一份可直接使用的正文；原文已经合适时可以不改。需要翻译、修改对照或多个版本，直接说明。
 
 <a id="scenarios"></a>
+<a id="examples"></a>
 
-## 📚 场景目录
+## ✍️ 12 个场景，12 组改写示例
 
-**先选场景，再选语言。** 每份文件都有该语言的规则和 **两类完整案例**，按“需求 → 原文 → 改写 → 说明”展示。
+每个场景选用不同原稿，展示措辞、语气或结构的变化。以下均为自拟示例，不代表实际研究结果或模型效果评测。展开可看前后对照与对应指南。
 
-| 场景 | 适用内容与重点 | 中文 | English |
-|---|---|:---:|:---:|
-| **日常聊天** | 微信、私聊；关系、口语、条件与承诺 | [中文](references/chat/zh.md) | [English](references/chat/en.md) |
-| **工作沟通** | 邮件、跟进、进度；事项、责任人、时间 | [中文](references/work-message/zh.md) | [English](references/work-message/en.md) |
-| **小红书** | 经验、教程、产品信息；来源与真实经历 | [中文](references/xiaohongshu/zh.md) | [English](references/xiaohongshu/en.md) |
-| **X / Twitter** | 单条、长帖、回复；观点与上下文 | [中文](references/x-post/zh.md) | [English](references/x-post/en.md) |
-| **微信公众号** | 科普、评论、通知；连贯展开与文章类型 | [中文](references/wechat-article/zh.md) | [English](references/wechat-article/en.md) |
-| **说明文档** | README、教程；步骤、输入输出、技术精度 | [中文](references/documentation/zh.md) | [English](references/documentation/en.md) |
-| **基金申请** | 研究计划、立项依据；问题、论证、可行性 | [中文](references/grant-proposal/zh.md) | [English](references/grant-proposal/en.md) |
-| **学术讲稿** | 组会、报告、答辩；听众背景、口播与转场 | [中文](references/academic-talk/zh.md) | [English](references/academic-talk/en.md) |
-| **学术 PPT 文本** | 标题、要点、图表说明；主旨与必要条件 | [中文](references/academic-slides/zh.md) | [English](references/academic-slides/en.md) |
-| **学术论文** | 摘要、方法、结果、讨论；术语、证据与限定 | [中文](references/academic-paper/zh.md) | [English](references/academic-paper/en.md) |
-| **审稿意见** | 润色已有评审；具体问题、依据与批评力度 | [中文](references/peer-review/zh.md) | [English](references/peer-review/en.md) |
-| **审稿回复** | 会议 rebuttal、期刊返修；逐条回应与实际进展 | [中文](references/reviewer-response/zh.md) | [English](references/reviewer-response/en.md) |
+<details open>
+<summary><strong>1. 日常聊天｜书面通知 → 朋友间的自然回复</strong></summary>
 
-文档中的案例均为自拟，用于说明写法，不代表实际研究结果或模型效果评测。
+**原文**
 
-<a id="voice-options"></a>
+> 关于周六一起吃饭的安排，我这边可能需要晚一点才能到达，因为下午还有一场会议需要参加。如果你先到了餐厅，可以先点菜，不必等待我到场。
 
-## 🎙️ 说明你的表达偏好
+**改写**
 
-默认按场景润色，**保留原文口气**。想调整时，直接说清楚要求：
+> 周六吃饭我可能会晚点到，下午还有个会。你要是先到了，就先点菜，不用等我。
 
-- “这是发给同事的消息。先说需要对方做什么，再说明原因。”
-- “这是审稿回复。措辞礼貌，保留明确的不同意见。”
-- “这是给朋友的消息。口语一点，不要额外加客套话。”
-
-这些是请求示例，不是固定分类。原文已经合适，可以不改。偏好仅用于本次改写，**不会自动成为长期档案**。只有明确要求导入、记住、保存或更新时，偏好才会持久化。
-
-<a id="personal-voice"></a>
-
-## 保留你自己的表达
-
-| 方式 | 你提供什么 | 如何使用 |
-|---|---|---|
-| **保留原文口气**（默认） | 原稿 | 清理不自然的表达，保留原有语气 |
-| **参考自己的样本** | 一两段或更多自己写的文字 | 本次任务参考句长、措辞、标点和节奏 |
-| **使用个人表达档案** | 你明确提供或选择的 Markdown 档案 | 复用可查看、可修改的偏好 |
-
-### 给样本，直接改写
-
-```text
-下面是我自己写的，只参考表达方式，不沿用其中的事实。
-样本一：图已经改好了，还差最后一遍检查。今天先别发。
-样本二：先给结论：这个版本能用，但还有两处要改。
-
-请按这个口气改写下面的工作消息：
-由于数据导出失败，报告无法按原计划发送。
-如果今天恢复导出，我预计可以在明天发出初稿。
-```
-
-**改写示例：** 导出失败了，报告没法按原计划发。如果今天恢复导出，我预计明天能发初稿。
-
-参考的是短句和直接交代进展的习惯。样本里的“图”“两处要改”不带入新消息，原稿中的条件和“预计”继续保留。
-
-### 把提供的文档导入表达记忆
-
-需要建立可复用的记忆时，直接用自然语言说明文档、目标作者、语言和场景。想先检查合并结果时，可以要求只预览：
-
-```text
-下面两个文件是我写的中文工作消息。只把我写的段落作为风格证据。
-请把可观察的表达习惯导入“中文工作消息”记忆，供以后使用。
-不要把来源事实写进档案。先展示合并后的档案，并在确认没有冲突后保存。
-```
-
-宿主使用可用的文档工具读取用户提供的文件。存储脚本只保存提取出的风格和最少的来源标签，不自行解析 `docx` 或 `pdf`。样本证据有限时，观察项应标为暂定；用户明确说要长期遵守的偏好可以写入明确约束。
-
-### 想复用偏好，再建立档案
-
-个人档案是可选的。可以自己填写，也可以让助手根据样本整理：
-
-```text
-根据这些样本整理一个可编辑的个人表达档案。
-中文和英文偏好分开列，拿不准的留空。
-先展示档案和一个改写例子，不要自动保存。
-```
-
-<details>
-<summary><strong>展开：可复制的档案模板、填写示例和使用方法</strong></summary>
-
-所有字段可选，只保留你想复用的内容。
-
-```markdown
-# 我的表达偏好
-
-## 使用范围
-- 适用场景：未指定
-
-## 中文
-- 语气、句长：未指定
-- 称呼、标点、格式：未指定
-- 希望保留或避免的表达：未指定
-- 自己的写作样本：可选
-
-## English
-- 语气、句长：未指定
-- 称呼、标点、格式：未指定
-- 希望保留或避免的表达：未指定
-- 自己的写作样本：可选
-```
-
-**填写示例（虚构）：**
-
-```markdown
-# 我的表达偏好
-
-## 使用范围
-- 仅用于中文工作进度消息。
-
-## 中文
-- 先交代进展，再说明限制；以短句为主。
-- 不加感叹号，保留原文中的“预计”“可能”。
-
-## English
-- 未指定。
-```
-
-**套用示例：** “当前导出任务尚未结束，因此我们目前还无法发送报告。” → “导出任务还没结束，我们现在还不能发报告。”
-
-下次把档案交给助手，说“按这个档案改写下面的工作消息”即可。档案可以放在 skill 目录之外。未指定的字段无需追问。
+指南：[中文](references/chat/zh.md) · [English](references/chat/en.md)
 
 </details>
 
-**当前任务要求优先于档案；样本和档案只提供风格，不提供新稿的事实。** 普通改写不需要建档案。skill 不会自动保存、更新档案或训练模型；保存档案需要你明确提出。宿主产品如何保存聊天记录不由本 skill 控制。
+<details>
+<summary><strong>2. 工作沟通｜背景铺陈 → 行动与期限优先</strong></summary>
+
+**原文**
+
+> 客户演示已安排在周五，因此还需要推进登录流程的回归测试工作，该项工作由小林负责，完成时间为周四 15:00 前。如在测试中遇到阻塞问题，也请在周四 17:00 前向我进行反馈。
+
+**改写**
+
+> 小林，请在周四 15:00 前完成登录流程的回归测试，支持周五的客户演示。如有阻塞问题，请在周四 17:00 前告诉我。
+
+指南：[中文](references/work-message/zh.md) · [English](references/work-message/en.md)
+
+</details>
+
+<details>
+<summary><strong>3. 小红书｜平铺记录 → 有细节、有重点的体验分享</strong></summary>
+
+**原文**
+
+> 上周日我下午两点去了河边那家咖啡店，在店内待了两小时。靠窗座位的光线让我觉得比较舒服，但插座只有吧台旁边有。我觉得这里适合带一本书坐坐，带电脑的话需要留意座位位置。
+
+**改写**
+
+> **河边咖啡店：窗边舒服，插座在吧台旁**
+>
+> 上周日下午两点去，坐了两小时。靠窗光线挺舒服，带本书来坐坐很合适。
+>
+> 带电脑的话留意一下座位：插座只在吧台旁边。
+
+指南：[中文](references/xiaohongshu/zh.md) · [English](references/xiaohongshu/en.md)
+
+</details>
+
+<details>
+<summary><strong>4. X / Twitter｜完整铺垫 → 简短鲜明的个人观点</strong></summary>
+
+**原文**
+
+> 在试用了三个笔记应用之后，我发现对我而言，影响使用体验的关键并不是功能数量的多少，而是在需要时能否快速找到此前记录的内容。因此，我现在选笔记应用时会先关注搜索功能。
+
+**改写**
+
+> 试了三个笔记应用，我现在先看搜索。对我来说，能快速找到旧笔记，比多几个功能更重要。
+
+指南：[中文](references/x-post/zh.md) · [English](references/x-post/en.md)
+
+</details>
+
+<details>
+<summary><strong>5. 微信公众号｜过程汇报 → 重点清楚、自然展开的短文</strong></summary>
+
+**原文**
+
+> 我们对团队过去一个月的周会进行了回顾，发现平均每次会议耗时约 50 分钟，其中有约 30 分钟被用于轮流汇报进度。因此，我们决定从下周开始尝试将进度更新放在会前文档中完成，并将会议时间用于讨论阻塞问题。这一安排将先试行两周，然后再决定是否继续采用。
+
+**改写**
+
+> 过去一个月，我们的周会平均每次约 50 分钟，其中约 30 分钟在报进度。
+>
+> 下周起，我们会试行两周：进度提前写进文档，会上讨论阻塞问题。试行结束后，再决定是否继续。
+
+指南：[中文](references/wechat-article/zh.md) · [English](references/wechat-article/en.md)
+
+</details>
+
+<details>
+<summary><strong>6. 说明文档｜操作描述 → 可直接执行的步骤</strong></summary>
+
+**原文**
+
+> 在开始执行数据校验任务之前，需要确保输入文件 `data.csv` 已经放置于当前目录中。在此前提下，通过执行 `sampletool validate data.csv --output report.json` 命令，即可对输入文件开展校验，并在校验成功后将报告输出至 `report.json` 文件。
+
+**改写**
+
+> 1. 将 `data.csv` 放到当前目录。
+> 2. 运行 `sampletool validate data.csv --output report.json`。
+>
+> 校验成功后，报告写入 `report.json`。
+
+指南：[中文](references/documentation/zh.md) · [English](references/documentation/en.md)
+
+</details>
+
+<details>
+<summary><strong>7. 基金申请｜冗长目标陈述 → 问题、方法与验证计划</strong></summary>
+
+**原文**
+
+> 本项目计划围绕现有工业缺陷检测方法在少量标注条件下适应新产线能力不足的问题开展研究，拟通过引入未标注图像来减少对人工标注的依赖，并计划在三条产线上开展对比实验，以评估在保持检测准确率的条件下是否能够降低标注量。
+
+**改写**
+
+> 针对工业缺陷检测在少量标注下难以适应新产线的问题，本项目拟利用未标注图像，降低对人工标注的依赖。计划在三条产线上开展对比实验，检验该方法能否在保持检测准确率的同时减少标注量。
+
+指南：[中文](references/grant-proposal/zh.md) · [English](references/grant-proposal/en.md)
+
+</details>
+
+<details>
+<summary><strong>8. 学术讲稿｜书面实验描述 → 听众容易跟上的口头讲述</strong></summary>
+
+**原文**
+
+> 为明确检索模块是否是性能增益的主要来源，我们进行了移除该模块的消融实验。在相同测试集上，完整系统的任务成功率为 71%，移除检索模块后降至 59%，这一结果表明检索模块对当前系统有贡献。
+
+**改写**
+
+> 接下来，我们看检索模块是不是性能提升的主要来源。我们把它去掉，在同一测试集上做了对比。任务成功率从 71% 降到了 59%，说明检索模块对当前系统有贡献。
+
+指南：[中文](references/academic-talk/zh.md) · [English](references/academic-talk/en.md)
+
+</details>
+
+<details>
+<summary><strong>9. 学术 PPT｜结果段落 → 结论标题与数据要点</strong></summary>
+
+**原文**
+
+> 在 batch size 为 1、输入长度为 2,048 tokens 的测试中，缓存使单次请求的平均延迟从 1.8 秒降至 1.1 秒，峰值显存占用从 8.2 GB 增至 9.0 GB。
+
+**改写**
+
+> **缓存降低延迟，但增加显存占用**
+>
+> - 单次请求平均延迟：1.8 → 1.1 秒
+> - 峰值显存：8.2 → 9.0 GB
+>
+> 测试条件：batch size = 1；输入长度 = 2,048 tokens。
+
+指南：[中文](references/academic-slides/zh.md) · [English](references/academic-slides/en.md)
+
+</details>
+
+<details>
+<summary><strong>10. 学术论文｜重复解说 → 紧凑、准确的结果分析</strong></summary>
+
+**原文**
+
+> 我们对所提出的方法进行评估后发现，在数据集 A 上，相同评估设置下的方法准确率为 86%，而基线的准确率为 82%。从这一对比可以看出，我们的方法在准确率上比基线高出 4 个百分点。
+
+**改写**
+
+> 在相同评估设置下，本方法在数据集 A 上的准确率为 86%，较基线的 82% 提高了 4 个百分点。
+
+指南：[中文](references/academic-paper/zh.md) · [English](references/academic-paper/en.md)
+
+</details>
+
+<details>
+<summary><strong>11. 审稿意见｜笼统批评 → 具体依据与修改要求</strong></summary>
+
+**原文**
+
+> 论文在实验报告方面还有比较明显的不足。表 2 只给出了单次运行的结果，没有报告不同随机种子下的波动情况，因此目前难以判断方法的提升是否稳定。我认为作者需要补充多个随机种子下的均值和标准差。
+
+**改写**
+
+> 表 2 只报告单次运行结果，尚不足以判断不同随机种子下的提升是否稳定。请补充多个随机种子下的均值和标准差。
+
+指南：[中文](references/peer-review/zh.md) · [English](references/peer-review/en.md)
+
+</details>
+
+<details>
+<summary><strong>12. 审稿回复｜辩解口吻 → 专业澄清与修改定位</strong></summary>
+
+**原文**
+
+> 审稿人认为我们遗漏了与方法 B 的对比，但实际上我们已经在表 3 中提供了该结果。可能是原文的表述不够清楚，导致这一点未被注意到。我们已在第 4.2 节补充文字，明确指向表 3，并说明两个方法采用相同训练预算。
+
+**改写**
+
+> 表 3 已包含与方法 B 的对比，两种方法使用相同训练预算。原文可能未充分说明这一点；我们已在第 4.2 节明确引用表 3，并说明训练预算设置。
+
+指南：[中文](references/reviewer-response/zh.md) · [English](references/reviewer-response/en.md)
+
+</details>
+
+<a id="voice-options"></a>
+<a id="personal-voice"></a>
+
+## 🎙️ 保留你的表达习惯
+
+可以直接说“先说需要对方做什么”“保留不同意见，措辞礼貌”或“口语一点，不加客套话”。也可以提供自己的样本：
+
+```text
+下面是我自己写的两段话，只参考表达方式，不沿用其中的事实：
+[写作样本]
+
+请按这个口气改写下面的工作消息：
+[原稿]
+```
+
+**当前任务要求优先；样本只提供风格，不提供新稿的事实。** 普通改写不会保存偏好。需要长期复用时，可以提供已有档案，或明确要求：
+
+```text
+把这些样本中的表达习惯保存为“中文工作消息”记忆，供以后使用。
+只提取我写的段落；不要保存来源事实，证据不足的偏好标为暂定。
+```
+
+想先检查时，把“保存”改为“只预览，不保存”。详见[记忆指南](references/style-memory.md)与[档案模板](templates/style-memory.md)。
 
 <a id="installation"></a>
 
-## 安装与文件结构
-
-这是一个包含 Markdown 指南和 Python 3.9+ 标准库脚本的 skill。普通文本改写只需要 Markdown 文件；持久化记忆和打包操作需要可写安装目录以及 Python 3.9 或更高版本。
-
-下载仓库，或使用 Git 克隆：
+## 🛠️ 安装
 
 ```bash
 git clone https://github.com/quqxui/context-aware-humanizer.git
 ```
 
-1. **本地试用：** 让支持读取本地文件的助手读取本仓库的 [`SKILL.md`](SKILL.md)，再按其中的指引读取对应场景与语言文件。
-2. **安装使用：** 将 **`SKILL.md`、`references/`、`scripts/` 和 `templates/`** 一起复制到同一个可写 skill 目录，保留相对结构。
-3. **使用可选记忆功能：** 确保有 Python 3.9 或更高版本。没有 Python 时，普通改写仍可用；持久化记忆应报告不可用，不能声称已应用或保存。
-4. **开始改写：** 发送上面的[自然语言请求](#quick-start)，附上原文。
+1. **本地试用**：让助手读取 [`SKILL.md`](SKILL.md)，再按指引读取对应场景和语言的指南。
+2. **安装复用**：将 `SKILL.md`、`references/`、`scripts/` 和 `templates/` 一起复制到助手的 skill 目录，保留相对结构。
+3. **启用可选记忆**：需要可写安装目录和 Python 3.9+。普通文本改写只依赖 Markdown 指南。
 
-### 持久化表达记忆
+表达记忆保存在该安装目录的私有 `memory/` 中；普通改写只读取同语言的通用及对应场景档案。不同安装之间不会自动同步。
 
-安装后的 skill 可以把用户明确授权导入的表达记忆保存在安装目录下的私有 `memory/` 中。记忆可以包含根据用户样本提取的暂定观察项。根目录由已安装脚本的位置确定，因此可以从任意当前目录执行命令。普通改写只读取目标语言的 `common` 和精确场景档案。
+<details>
+<summary><strong>导出、备份与更新</strong></summary>
 
-```bash
-python3 <skill-root>/scripts/style_memory.py read --language zh --scenario work-message
-python3 <skill-root>/scripts/style_memory.py save \
-  --language zh --scenario work-message \
-  --input /tmp/profile.md --expected-revision HASH
-```
-
-新建作用域时使用 `--expected-revision missing`。`read` 返回 `profiles`、`target_revision` 和 `warnings`；`save` 返回 `saved`、`path`、`revision`、`backup` 和 `warnings`。只有用户明确要求导入、记住、保存或更新时才写入。预览和普通改写只读。作者识别、证据、合并冲突和档案模板见 [`references/style-memory.md`](references/style-memory.md)。
-
-导出安装包、备份私有记忆和更新程序文件：
+以下命令中的 `<skill-root>` 为安装目录；输出路径须指向安装目录外的新文件。
 
 ```bash
 python3 <skill-root>/scripts/skill_package.py export --output /outside/context-aware-humanizer.zip
@@ -261,56 +296,16 @@ python3 <skill-root>/scripts/skill_package.py backup --output /outside/context-a
 python3 <skill-root>/scripts/skill_package.py update --source /path/to/new-skill
 ```
 
-`export` 按允许列表包含受维护的运行文件、文档、模板和 README 展示横幅，并排除私有记忆和本地文件；`backup` 包含记忆和历史版本；`update` 只复制受维护的程序文件，并保留目标安装中的记忆。输出文件只允许新建，不会覆盖已有文件。
+- `export`：导出公共安装包，排除个人记忆和本地文件。
+- `backup`：生成包含记忆及历史版本的私有备份。
+- `update`：更新受维护的程序文件，保留目标安装中的记忆。
 
-记忆归属于可写的单个安装目录。公共 Git 和公共导出包不包含个人记忆。不同安装之间不会自动同步。第三方安装器或更新工具仍可能删除用户数据；当前版本不提供跨设备自动同步。脚本不解析 `docx` 或 `pdf`，宿主使用可用的文档工具读取用户提供的文件。
-
-README 和横幅仅用于展示，不需要随 skill 一起加载。
-
-<details>
-<summary><strong>查看目录结构与维护方式</strong></summary>
-
-```text
-context-aware-humanizer/
-├── SKILL.md                 # 执行入口与共用规则
-├── README.md                # English
-├── README.zh.md             # 简体中文
-├── .github/
-│   └── banner.png           # README 展示图片
-├── scripts/                 # Python 3.9+ 记忆与打包脚本
-├── templates/               # 公共档案模板
-├── memory/                  # 私有生成记忆；首次保存前可能不存在
-└── references/
-    ├── chat/                # 每个场景均有 zh.md 和 en.md
-    ├── work-message/
-    ├── xiaohongshu/
-    ├── x-post/
-    ├── wechat-article/
-    ├── documentation/
-    ├── grant-proposal/
-    ├── academic-talk/
-    ├── academic-slides/
-    ├── academic-paper/
-    ├── peer-review/
-    └── reviewer-response/
-```
-
-例如，中文论文看 **[`references/academic-paper/zh.md`](references/academic-paper/zh.md)**，英文论文看 **[`references/academic-paper/en.md`](references/academic-paper/en.md)**。每份文件包含本语言的规则和示例，可以单独维护，**无需为了改一份而同步另一份**。
-
-通用的原意保留规则、场景选择、表达偏好和个人档案的使用方式放在 **[`SKILL.md`](SKILL.md)**；使用示例和档案模板放在 README 中。`scripts/` 提供可选的记忆保存和打包操作；`memory/` 是私有生成数据，不属于公共导出包。README 展示横幅会随公共包保留。
+公共 Git 不包含个人记忆。第三方安装器仍可能移除数据；更新前可先备份。文档读取由宿主助手完成，存储脚本只保存提取出的风格。
 
 </details>
 
----
+## 范围与许可
 
-## 验证与边界
+本 skill 只改写用户提供的文本，不连接平台、抓取、发布或提交内容。它不核查事实，不提供“AI 含量”分数或检测通过保证；目前尚未完成系统性的跨模型效果评测。
 
-验证重点是 **原意保留、场景适配、自然程度、避免过度修改**。文档示例不计作实际测试结果；目前尚未完成系统性的跨模型评测。
-
-skill 不判断文本由谁写成，不提供“AI 含量”分数或检测通过保证。润色不会自动完成事实核查、研究、补实验、发布内容或提交文稿。学术场景以具体资助方、期刊或会议的要求为准。
-
-## 贡献与许可
-
-欢迎贡献一个具体场景、一份中文或英文示例，或一个可复现的失败案例。见 **[贡献说明](CONTRIBUTING.md)**。
-
-本仓库原创内容采用 **[MIT License](LICENSE)**。外部链接内容仍归各自作者所有。
+欢迎贡献场景、示例或可复现的失败案例，见[贡献说明](CONTRIBUTING.md)。原创内容采用 [MIT License](LICENSE)，外部材料归各自作者所有。
