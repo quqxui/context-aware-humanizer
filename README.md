@@ -60,7 +60,7 @@
 
 **改写**
 
-> 周六吃饭我可能会晚点到，下午还有个会。你要是先到了，就先点菜，不用等我。
+> 我周六下午还有个会，吃饭可能会晚点到，你先到了就先点菜，不用等我。
 
 处理流程与完整案例：[日常聊天](references/chat.md)
 
@@ -75,7 +75,7 @@
 
 **改写**
 
-> 小林，请在周四 15:00 前完成登录流程的回归测试，支持周五的客户演示。如有阻塞问题，请在周四 17:00 前告诉我。
+> 小林，登录流程的回归测试请你在周四 15:00 前做完，周五要给客户做演示。如果测试中有问题卡住，也请在周四 17:00 前告诉我。
 
 处理流程与完整案例：[工作沟通](references/work-message.md)
 
@@ -90,11 +90,7 @@
 
 **改写**
 
-> **河边咖啡店：窗边舒服，插座在吧台旁**
->
-> 上周日下午两点去，坐了两小时。靠窗光线挺舒服，带本书来坐坐很合适。
->
-> 带电脑的话留意一下座位：插座只在吧台旁边。
+> 上周日下午两点去了河边那家咖啡店，在里面坐了两个小时。靠窗的光线挺舒服，感觉带本书来坐坐很合适，不过带电脑的话得留意座位，插座只有吧台旁边才有。
 
 处理流程与完整案例：[小红书](references/xiaohongshu.md)
 
@@ -109,9 +105,9 @@
 
 **改写**
 
-> 过去一个月，我们的周会平均每次约 50 分钟，其中约 30 分钟在报进度。
+> 回看过去一个月的周会，我们发现每次平均要开约 50 分钟，光是轮流汇报进度就占了约 30 分钟。
 >
-> 下周起，我们会试行两周：进度提前写进文档，会上讨论阻塞问题。试行结束后，再决定是否继续。
+> 因此，下周起我们会把进度提前写进文档，会上集中讨论阻塞问题，先试行两周，再决定要不要继续。
 
 处理流程与完整案例：[微信公众号](references/wechat-article.md)
 
@@ -126,7 +122,7 @@
 
 **改写**
 
-> 针对工业缺陷检测在少量标注下难以适应新产线的问题，本项目拟利用未标注图像，降低对人工标注的依赖。计划在三条产线上开展对比实验，检验该方法能否在保持检测准确率的同时减少标注量。
+> 现有工业缺陷检测方法在标注图像较少时难以适应新产线。本项目拟利用未标注图像减少对人工标注的依赖，并在三条产线上开展对比实验，检验该方法能否在保持检测准确率的同时降低标注量。
 
 处理流程与完整案例：[基金申请](references/grant-proposal.md)
 
@@ -141,7 +137,7 @@
 
 **改写**
 
-> 接下来，我们看检索模块是不是性能提升的主要来源。我们把它去掉，在同一测试集上做了对比。任务成功率从 71% 降到了 59%，说明检索模块对当前系统有贡献。
+> 为了弄清性能提升是不是主要来自检索模块，我们把它去掉后，在同一个测试集上做了对比。任务成功率从完整系统的 71% 降到了 59%，说明检索模块确实对当前系统有贡献。
 
 处理流程与完整案例：[学术讲稿中文](references/academic-talk-zh.md)
 
@@ -156,7 +152,7 @@
 
 **改写**
 
-> Next, let's look at whether retrieval accounts for most of the gain. We removed the retrieval module and tested again on the same test set. Task success dropped from 71% to 59%, so retrieval does contribute to the current system's performance.
+> We wanted to know whether most of the gain came from retrieval, so we removed that module and ran the system on the same test set. Task success fell from 71% with the full system to 59% without retrieval, which shows that the module contributes to performance in this system.
 
 处理流程与完整案例：[学术讲稿英文](references/academic-talk-en.md)
 
@@ -241,7 +237,7 @@
 
 **改写**
 
-> Table 3 includes the comparison with method B under the same training budget. We may not have made this clear in the original text. We have revised Section 4.2 to point explicitly to Table 3 and clarify the matched training budget.
+> Table 3 already includes the comparison with method B. We may not have made this clear in the original text, so we have revised Section 4.2 to refer explicitly to Table 3 and explain that both methods use the same training budget.
 
 处理流程与完整案例：[审稿回复](references/reviewer-response.md)
 

@@ -5,8 +5,8 @@ Use for spoken delivery of research at a seminar, conference, thesis defense, or
 ## Workflow
 
 1. Identify the audience, speaking time, and supplied figure or slide references.
-2. Organize the material into spoken units, with a clear question, evidence, and limitation where supplied.
-3. Rewrite for English delivery: use clear subjects, familiar verbs, and short transitions; use contractions only when they fit the speaker.
+2. Connect the supplied question, evidence, and limitation so the audience can follow the reasoning.
+3. Rewrite for English delivery with clear subjects, familiar verbs, and connected clauses. Split a sentence when it is hard to follow aloud; use contractions only when they fit the speaker.
 4. Check each number with its metric, comparator, and scope. Read through for pacing without strengthening claims.
 5. Return an English script. Add delivery cues only when useful or requested; do not add a Chinese counterpart.
 
@@ -24,13 +24,13 @@ I would now like to draw your attention to Figure 2, which shows that accuracy i
 
 **Rewrite:**
 
-Let's look at Figure 2. On the same test set, accuracy rose from 82% to 86%. We have not tested other datasets yet.
+As Figure 2 shows, accuracy rose from 82% to 86% on the same test set, although we have not tested other datasets yet.
 
-**Why:** Figure 2, both numbers, the same test set, and the untested scope remain; only pacing changes.
+**Why:** The figure reference leads into the result, and the final clause connects it to the evaluation limit. Figure 2, both numbers, and the scope remain intact.
 
 ### Case 2 — Oral transition and limitation
 
-**Request:** Add a clear spoken transition between the calibration result and its limitation.
+**Request:** Check whether the transition and limitation are easy to follow in a spoken script.
 
 **Source:**
 
@@ -38,9 +38,9 @@ We next turn to calibration. We calibrated the model on 120 held-out cases, but 
 
 **Rewrite:**
 
-Next, calibration. We calibrated the model on 120 held-out cases. But we have not checked its calibration at external hospitals.
+We next turn to calibration. We calibrated the model on 120 held-out cases, but we have not assessed its calibration at external hospitals.
 
-**Why:** The transition, 120 held-out cases, and unassessed external-hospital setting remain; the added cue only marks the supplied limitation.
+**Why:** The source already introduces the topic and connects the completed work to its limitation. Keeping it unchanged avoids adding fragments or extra pauses.
 
 ## Common formats
 
@@ -55,12 +55,12 @@ Return an English script or paragraph ready for spoken delivery. Include deliver
 
 ## Editing guidance
 
-1. Organize the supplied material around the audience and speaking time, with one reasoning step per spoken unit. Do not turn a paragraph edit into a full talk.
-2. Use short spoken transitions to mark the question, evidence, and limitation. A transition must not invent a causal relationship.
+1. Organize the supplied material around the audience and speaking time, keeping related information connected. Do not turn a paragraph edit into a full talk.
+2. Use a spoken transition when the topic changes or the speaker refers to a figure. Do not prepend a cue to every paragraph or invent a causal relationship.
 3. Keep supplied figures, concrete numbers, and named comparisons together with the scope needed to interpret them.
 4. Distinguish observations, interpretations, and untested inferences. A confident delivery must not increase scientific certainty.
 5. Reduce jargon only when the audience permits it; retain technical precision and do not invent definitions.
-6. Contractions and short fragments can fit a spoken script. Keep the speaker’s preferred formality rather than forcing jokes, audience questions, or casual asides.
+6. Keep the speaker's preferred formality and natural phrasing. Do not introduce fragments or isolate each fact merely to make the script sound spoken. Contractions, pauses, and asides should fit the supplied voice and context.
 7. Prefer familiar verbs and clear referents; keep passive voice when it fits the procedure or the actor is not supplied.
 8. Fit the requested duration without altering a claim to save words. If compression is needed, retain the qualifications required to understand the main result.
 
