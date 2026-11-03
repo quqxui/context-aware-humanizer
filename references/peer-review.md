@@ -1,6 +1,14 @@
-# Peer review — English
+# Peer review
 
 Use when editing the user's own review report or assessment. Preserve the reviewer's actual observations, standards, and recommendation; do not generate criticism for an unread paper.
+
+## Workflow
+
+1. Identify the reviewer's supplied observations, recommendation, scores, and required sections.
+2. Connect each comment to its supplied evidence, implication, and requested action.
+3. Edit the English wording for clarity and professionalism without changing severity or inventing praise.
+4. Check that the recommendation, uncertainty, and public or confidential boundaries remain intact.
+5. Return the English review in the requested structure; flag unresolved inconsistencies separately.
 
 ## Worked examples
 

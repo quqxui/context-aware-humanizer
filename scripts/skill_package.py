@@ -17,8 +17,6 @@ from typing import Iterable, List, Optional, Sequence, Tuple
 _TOP_LEVEL_FILES = {
     "SKILL.md",
     "README.md",
-    "README.zh.md",
-    "README.en.md",
     "LICENSE",
     "CONTRIBUTING.md",
     ".gitignore",

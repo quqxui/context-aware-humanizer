@@ -1,6 +1,14 @@
-# Reviewer response — English
+# Reviewer response
 
 Use for an author response to conference reviews or a journal revision letter. First identify the mode, deadline, format, and what changes or experiments are actually available.
+
+## Workflow
+
+1. Identify conference rebuttal or journal revision mode and the supplied response constraints.
+2. Match each reviewer point to the author's response, available evidence, and actual revision status.
+3. Write a direct English response that preserves agreement, partial agreement, or disagreement.
+4. Verify experiments, manuscript changes, and locations against the supplied material; keep planned and completed work distinct.
+5. Return the English response in the requested format; flag missing author input outside the response.
 
 ## Worked examples
 

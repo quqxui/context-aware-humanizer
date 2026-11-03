@@ -1,6 +1,14 @@
-# Academic paper — English
+# Academic paper
 
 Use for an abstract, introduction, methods, results, discussion, or full manuscript. Keep the target venue, genre, evidence, and LaTeX structure in scope.
+
+## Workflow
+
+1. Identify the manuscript section, requested editing scope, and supplied venue or LaTeX constraints.
+2. Distinguish methods, results, interpretation, and limitations before changing wording.
+3. Edit the English prose for precise terms, direct verbs, and logical connections while preserving the requested structure.
+4. Check numerical comparisons, claim strength, citations, and protected markup against the source.
+5. Return the edited English text; place any material evidence gap outside the manuscript.
 
 ## Worked examples
 

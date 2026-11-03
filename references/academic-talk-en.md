@@ -1,6 +1,14 @@
-# Academic talk — English
+# Academic talk in English
 
 Use for spoken delivery of research at a seminar, conference, thesis defense, or lab meeting. Optimize for listening, time, audience knowledge, and the speaker's actual evidence.
+
+## Workflow
+
+1. Identify the audience, speaking time, and supplied figure or slide references.
+2. Organize the material into spoken units, with a clear question, evidence, and limitation where supplied.
+3. Rewrite for English delivery: use clear subjects, familiar verbs, and short transitions; use contractions only when they fit the speaker.
+4. Check each number with its metric, comparator, and scope. Read through for pacing without strengthening claims.
+5. Return an English script. Add delivery cues only when useful or requested; do not add a Chinese counterpart.
 
 ## Worked examples
 
@@ -43,7 +51,7 @@ Next, calibration. We calibrated the model on 120 held-out cases. But we have no
 
 ## Output
 
-Return a speaker-ready script or paragraph with cues for opening, transition, evidence, and close. Do not silently add slide content or results.
+Return an English script or paragraph ready for spoken delivery. Include delivery cues only when useful or requested. Do not silently add slide content or results.
 
 ## Editing guidance
 

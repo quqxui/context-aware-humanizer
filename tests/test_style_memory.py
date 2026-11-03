@@ -33,14 +33,50 @@ class MemoryStoreTests(unittest.TestCase):
     def test_reads_only_same_language_common_and_exact_scope(self):
         self.save('zh', 'common', 'Common preference')
         exact = self.save('zh', 'chat', 'Chat preference')
-        self.save('zh', 'academic-paper', 'Unrelated Chinese paper')
-        self.save('en', 'chat', 'Unrelated English chat')
+        self.save('zh', 'grant-proposal', 'Unrelated Chinese proposal')
+        self.save('en', 'academic-paper', 'Unrelated English paper')
         result = self.store.read('zh', 'chat')
         self.assertEqual([p['scope'] for p in result['profiles']], ['common', 'chat'])
         self.assertEqual(result['target_revision'], exact['revision'])
         self.assertNotIn('Unrelated', str(result))
         self.assertEqual([p['scope'] for p in self.store.read('zh', 'unlisted')['profiles']], ['common'])
         self.assertEqual(len(self.store.read('zh', 'common')['profiles']), 1)
+
+    def test_talk_and_slide_memories_stay_independent(self):
+        self.save('zh', 'common', 'Chinese common')
+        self.save('en', 'common', 'English common')
+        for language in ('zh', 'en'):
+            for scenario in ('academic-talk', 'academic-slides'):
+                self.save(language, scenario, f'Only {language} {scenario}')
+        for language in ('zh', 'en'):
+            for scenario in ('academic-talk', 'academic-slides'):
+                with self.subTest(language=language, scenario=scenario):
+                    result = self.store.read(language, scenario)
+                    self.assertEqual([p['scope'] for p in result['profiles']], ['common', scenario])
+                    self.assertEqual(result['profiles'][-1]['content'], profile(language, scenario, f'Only {language} {scenario}'))
+                    self.assertEqual(Path(result['profiles'][-1]['path']).parent.name, language)
+
+    def test_retired_scopes_are_not_loaded_or_overwritten(self):
+        retired = [
+            ('zh', 'x-post'), ('en', 'x-post'),
+            ('zh', 'documentation'), ('en', 'documentation'),
+            ('en', 'chat'), ('en', 'work-message'), ('en', 'xiaohongshu'),
+            ('en', 'wechat-article'), ('en', 'grant-proposal'),
+            ('zh', 'academic-paper'), ('zh', 'peer-review'), ('zh', 'reviewer-response'),
+        ]
+        for language in ('zh', 'en'):
+            self.save(language, 'common', f'{language} common')
+        for language, scenario in retired:
+            with self.subTest(language=language, scenario=scenario):
+                legacy_path = self.store.root / language / (scenario + '.md')
+                original = profile(language, scenario, 'Legacy preference')
+                legacy_path.write_text(original)
+                result = self.store.read(language, scenario)
+                self.assertEqual([p['scope'] for p in result['profiles']], ['common'])
+                self.assertEqual(result['target_revision'], 'missing')
+                with self.assertRaises(MemoryError):
+                    self.save(language, scenario, 'Replacement')
+                self.assertEqual(legacy_path.read_text(), original)
 
     def test_save_verifies_bytes_and_backs_up_prior_revision(self):
         first = self.save(body='Old preference')

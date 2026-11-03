@@ -1,6 +1,14 @@
-# Academic slides — English
+# Academic slides in English
 
 Use for slide text, titles, captions, speaker notes, and visual sequencing. Slides support a talk; they are not a transcript of the paper.
+
+## Workflow
+
+1. Identify the requested slides and whether the input is a title, bullet list, caption, or speaker note.
+2. State each slide's main point in an English title and compress the supplied evidence into readable bullets.
+3. Check parallel grammar, technical terms, capitalization, and spelling while keeping metrics, units, and qualifiers.
+4. Check the slide sequence and keep any requested speaker notes separate from display text.
+5. Return English slide copy, without a Chinese counterpart or an unrequested presentation file.
 
 ## Worked examples
 

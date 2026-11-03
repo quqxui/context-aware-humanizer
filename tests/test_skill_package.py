@@ -11,14 +11,14 @@ from unittest import mock
 
 class SkillPackageTests(unittest.TestCase):
     def make_skill(self, root: Path, name="context-aware-humanizer"):
-        (root / "references" / "chat").mkdir(parents=True)
+        (root / "references").mkdir(parents=True)
         (root / "scripts").mkdir()
         (root / "templates").mkdir()
         (root / "SKILL.md").write_text(
             f"---\nname: {name}\n---\n# Skill\n", encoding="utf-8"
         )
         (root / "README.md").write_text("readme", encoding="utf-8")
-        (root / "references" / "chat" / "en.md").write_text("guide", encoding="utf-8")
+        (root / "references" / "chat.md").write_text("guide", encoding="utf-8")
         (root / "scripts" / "runtime.py").write_text("runtime = 1\n", encoding="utf-8")
         (root / "templates" / "style-memory.md").write_text("template", encoding="utf-8")
 
@@ -49,18 +49,22 @@ class SkillPackageTests(unittest.TestCase):
             (root / ".local").mkdir()
             (root / ".local" / "note").write_text("local", encoding="utf-8")
             (root / "secret.txt").write_text("secret", encoding="utf-8")
+            (root / "README.zh.md").write_text("legacy Chinese readme", encoding="utf-8")
+            (root / "README.en.md").write_text("legacy English readme", encoding="utf-8")
             output = Path(temp) / "public.zip"
             result = export_skill(root, output)
             self.assertTrue(result["created"])
             with zipfile.ZipFile(output) as archive:
                 names = set(archive.namelist())
             self.assertIn("SKILL.md", names)
-            self.assertIn("references/chat/en.md", names)
+            self.assertIn("references/chat.md", names)
             self.assertIn(".github/banner.png", names)
             self.assertNotIn(".github/secret.txt", names)
             self.assertNotIn("memory/zh/chat.md", names)
             self.assertNotIn(".local/note", names)
             self.assertNotIn("secret.txt", names)
+            self.assertNotIn("README.zh.md", names)
+            self.assertNotIn("README.en.md", names)
 
     def test_private_backup_includes_memory_but_excludes_lock_and_temp(self):
         from scripts.skill_package import export_skill
@@ -182,7 +186,7 @@ class SkillPackageTests(unittest.TestCase):
             root = Path(temp) / "skill"; root.mkdir()
             self.make_skill(root)
             external = Path(temp) / "outside.md"; external.write_text("outside", encoding="utf-8")
-            (root / "references" / "chat" / "link.md").symlink_to(external)
+            (root / "references" / "link.md").symlink_to(external)
             with self.assertRaises(ValueError):
                 export_skill(root, Path(temp) / "out.zip")
 

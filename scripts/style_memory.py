@@ -14,11 +14,16 @@ import tempfile
 import uuid
 
 LANGUAGES = ('zh', 'en')
-SCENARIOS = frozenset((
-    'chat', 'work-message', 'xiaohongshu', 'x-post', 'wechat-article',
-    'documentation', 'grant-proposal', 'academic-talk', 'academic-slides',
-    'academic-paper', 'peer-review', 'reviewer-response',
-))
+SCENARIOS_BY_LANGUAGE = {
+    'zh': frozenset((
+        'chat', 'work-message', 'xiaohongshu', 'wechat-article',
+        'grant-proposal', 'academic-talk', 'academic-slides',
+    )),
+    'en': frozenset((
+        'academic-talk', 'academic-slides', 'academic-paper',
+        'peer-review', 'reviewer-response',
+    )),
+}
 MAX_PROFILE_BYTES = 64 * 1024
 
 
@@ -35,8 +40,8 @@ def validate_scope(language, scenario, saving=False):
         raise MemoryError('Language must be zh or en.')
     if not isinstance(scenario, str) or not re.fullmatch(r'[a-z][a-z0-9-]{0,63}', scenario):
         raise MemoryError('Invalid scenario name.')
-    if saving and scenario not in SCENARIOS and scenario != 'common':
-        raise MemoryError('Save requires common or a supported scenario.')
+    if saving and scenario not in SCENARIOS_BY_LANGUAGE[language] and scenario != 'common':
+        raise MemoryError('Save requires common or a scenario supported in the selected language.')
 
 
 def validate_profile(content, language, scenario):
@@ -162,7 +167,7 @@ class MemoryStore:
         result = {'language': language, 'scenario': scenario, 'profiles': [],
                   'target_revision': 'missing', 'warnings': []}
         scopes = ['common']
-        if scenario in SCENARIOS:
+        if scenario in SCENARIOS_BY_LANGUAGE[language]:
             scopes.append(scenario)
         for scope in scopes:
             path = self.root / language / (scope + '.md')
@@ -197,7 +202,7 @@ class MemoryStore:
                 '| Language | Scenario | File |', '|---|---|---|']
         warnings = []
         for language in LANGUAGES:
-            for scope in sorted(SCENARIOS | {'common'}):
+            for scope in sorted(SCENARIOS_BY_LANGUAGE[language] | {'common'}):
                 path = self.root / language / (scope + '.md')
                 try:
                     self._safe(path)
