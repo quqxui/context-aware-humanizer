@@ -16,7 +16,7 @@ import uuid
 LANGUAGES = ('zh', 'en')
 SCENARIOS_BY_LANGUAGE = {
     'zh': frozenset((
-        'chat', 'work-message', 'xiaohongshu', 'wechat-article',
+        'chat', 'work-message', 'xiaohongshu',
         'grant-proposal', 'academic-talk', 'academic-slides',
     )),
     'en': frozenset((

@@ -1,6 +1,6 @@
 ---
 name: context-aware-humanizer
-description: 按使用场景润色用户提供的原稿或笔记，保留原意、事实和个人表达。用户要求去 AI 味、说人话、humanize、调整语气或导入写作风格时使用。支持中文日常聊天、工作沟通、小红书、公众号和基金申请，独立的中文及英文学术讲稿与学术 PPT 场景，以及英文学术论文、审稿意见和审稿回复。不用于独立研究、事实核查或发布。
+description: 按使用场景润色用户提供的原稿或笔记，保留原意、事实和个人表达。用户要求去 AI 味、说人话、humanize、调整语气或导入写作风格时使用。支持中文日常聊天、工作沟通、小红书和基金申请，独立的中文及英文学术讲稿与学术 PPT 场景，以及英文学术论文、审稿意见和审稿回复。不用于独立研究、事实核查或发布。
 ---
 
 # Context-Aware Humanizer
@@ -16,15 +16,14 @@ description: 按使用场景润色用户提供的原稿或笔记，保留原意�
 | 1 | 日常聊天 | 中文 | [日常聊天](references/chat.md) | `zh / chat` |
 | 2 | 工作沟通 | 中文 | [工作沟通](references/work-message.md) | `zh / work-message` |
 | 3 | 小红书 | 中文 | [小红书](references/xiaohongshu.md) | `zh / xiaohongshu` |
-| 4 | 微信公众号 | 中文 | [微信公众号](references/wechat-article.md) | `zh / wechat-article` |
-| 5 | 基金申请 | 中文 | [基金申请](references/grant-proposal.md) | `zh / grant-proposal` |
-| 6 | 学术讲稿中文 | 中文 | [学术讲稿中文](references/academic-talk-zh.md) | `zh / academic-talk` |
-| 7 | 学术讲稿英文 | 英文 | [学术讲稿英文](references/academic-talk-en.md) | `en / academic-talk` |
-| 8 | 学术 PPT 中文 | 中文 | [学术 PPT 中文](references/academic-slides-zh.md) | `zh / academic-slides` |
-| 9 | 学术 PPT 英文 | 英文 | [学术 PPT 英文](references/academic-slides-en.md) | `en / academic-slides` |
-| 10 | 学术论文 | 英文 | [学术论文](references/academic-paper.md) | `en / academic-paper` |
-| 11 | 审稿意见 | 英文 | [审稿意见](references/peer-review.md) | `en / peer-review` |
-| 12 | 审稿回复 | 英文 | [审稿回复](references/reviewer-response.md) | `en / reviewer-response` |
+| 4 | 基金申请 | 中文 | [基金申请](references/grant-proposal.md) | `zh / grant-proposal` |
+| 5 | 学术讲稿中文 | 中文 | [学术讲稿中文](references/academic-talk-zh.md) | `zh / academic-talk` |
+| 6 | 学术讲稿英文 | 英文 | [学术讲稿英文](references/academic-talk-en.md) | `en / academic-talk` |
+| 7 | 学术 PPT 中文 | 中文 | [学术 PPT 中文](references/academic-slides-zh.md) | `zh / academic-slides` |
+| 8 | 学术 PPT 英文 | 英文 | [学术 PPT 英文](references/academic-slides-en.md) | `en / academic-slides` |
+| 9 | 学术论文 | 英文 | [学术论文](references/academic-paper.md) | `en / academic-paper` |
+| 10 | 审稿意见 | 英文 | [审稿意见](references/peer-review.md) | `en / peer-review` |
+| 11 | 审稿回复 | 英文 | [审稿回复](references/reviewer-response.md) | `en / reviewer-response` |
 
 - 明确指定的输出语言优先；否则沿用原稿语言。用户用中文提出要求，不代表英文原稿应翻成中文。场景默认语言也不是翻译授权。
 - 用户选择的场景与原稿语言不一致、又未说明是否翻译时，先确认目标语言。只说“润色中文论文”时，保留中文并使用共同规则，不套用英文学术论文指南。

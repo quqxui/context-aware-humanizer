@@ -60,8 +60,9 @@ class MemoryStoreTests(unittest.TestCase):
         retired = [
             ('zh', 'x-post'), ('en', 'x-post'),
             ('zh', 'documentation'), ('en', 'documentation'),
+            ('zh', 'wechat-article'), ('en', 'wechat-article'),
             ('en', 'chat'), ('en', 'work-message'), ('en', 'xiaohongshu'),
-            ('en', 'wechat-article'), ('en', 'grant-proposal'),
+            ('en', 'grant-proposal'),
             ('zh', 'academic-paper'), ('zh', 'peer-review'), ('zh', 'reviewer-response'),
         ]
         for language in ('zh', 'en'):

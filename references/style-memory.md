@@ -39,7 +39,7 @@ scenario: work-message
 
 | `language` | 可用的 `scenario` |
 |---|---|
-| `zh` | `chat`、`work-message`、`xiaohongshu`、`wechat-article`、`grant-proposal`、`academic-talk`、`academic-slides` |
+| `zh` | `chat`、`work-message`、`xiaohongshu`、`grant-proposal`、`academic-talk`、`academic-slides` |
 | `en` | `academic-talk`、`academic-slides`、`academic-paper`、`peer-review`、`reviewer-response` |
 | `zh` 或 `en` | `common` |
 
